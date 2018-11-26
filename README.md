@@ -1,2 +1,2 @@
 # TradingPlatform
-a simple Trading Platform using JDBC, MAVEN, JSP and fron end techs
+a simple Trading Platform using JPA, MAVEN, JSP and fronT end techs
