@@ -12,12 +12,17 @@ public class Main {
 
 	public static void main(String[] args) {
 		UserDao userCollection= new UserDao();
-		CompanyDao companydao = new CompanyDao();
-		com.fdmgroup.model.User u1 = new User("www","123","jone","doe","eeee@qq.com");
-		Company com=new Company("fdm","fdm",2);
+		//CompanyDao companydao = new CompanyDao();
+		User u1 = new User("www","123","jone","doe","eeee@qq.com");
+		//Company com=new Company("fdm","fdm",2,250.5);
 		userCollection.create(u1);
 		//userCollection.remove(u1);
 		//companydao.create(com);
+		//User ret = userCollection.findById(1);
+		//System.out.println(ret);
+		
+		
+		
 //		
 //		TradeDao tradeDao = new TradeDao();
 //		LocalDateTime localDateTime  = LocalDateTime.now();

@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>FDMGroup</title>
 </head>
 <body>
-Welcome ${ loggedInUser.firstname }
-
-<a href="logout">logout</a>
+ Welcome ${ loggedInUser.firstname }</br>
+ 
+ <a href="logout">Logout</a>
 </body>
 </html>

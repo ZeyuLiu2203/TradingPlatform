@@ -7,14 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% int a = 10, b=5;
-int c=a+b;
+<%int a = 10, b=5;
+int c= a+b;
 out.print(c);
 %>
-<%=3+4  
-
-
-
-%>
+</br>
+<%=3+4 %>
+<form action="get">
+<button type="submit" formaction = "login3" value="2" name = "b1">Login</button>
+<button type="submit" formaction = "registration3" value="23" name = "b2">Registration</button>
+</form>
 </body>
 </html>

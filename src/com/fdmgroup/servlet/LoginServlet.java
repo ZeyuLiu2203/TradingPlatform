@@ -14,32 +14,27 @@ import com.fdmgroup.model.User;
 
 public class LoginServlet extends HttpServlet{
 	
-	
-	
-	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
-		String username = req.getParameter("username");//name of input
-		String password = req.getParameter("password");
-		
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
 		UserDao udao = new UserDao();
-		
 		int result = Integer.parseInt(username);
-		User foundUser =  udao.findById(result);
-		System.out.println("3");
-		if(password != null && password.equals(foundUser.getPassword())) {
-			
-			
-			HttpSession session = req.getSession();
-			session.setAttribute("loggedInUser", foundUser);
-			
-			
-			
-			RequestDispatcher rd = req.getRequestDispatcher("welcome.jsp");
-			rd.forward(req, res);
-			
-		}else {
-			req.setAttribute("error","invalid username/password");
-			RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
-			rd.forward(req, res);
-		}
+		User foundUser = udao.findById(result);
+		
+			if(foundUser!= null && password != null && password.equals(foundUser.getPassword())) {
+				HttpSession session = request.getSession();
+				session.setAttribute("loggedInUser",foundUser);
+				RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
+				rd.forward(request, response);
+				
+				
+			}else {
+				request.setAttribute("error", "Invalid username/password");
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}
+		
+		
 	}
+
 }

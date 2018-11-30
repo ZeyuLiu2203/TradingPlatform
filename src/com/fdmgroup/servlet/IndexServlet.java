@@ -13,18 +13,12 @@ import com.fdmgroup.model.User;
 
 public class IndexServlet extends HttpServlet{
 	
-	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = req.getSession();
-		User loggedInUser = (User) session.getAttribute("LoggedInUser");
-		if(loggedInUser != null) {//check if the user has already logged in
-			RequestDispatcher rd = req.getRequestDispatcher("welcome.jsp");
-			rd.forward(req, res);
-		}
-		RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
-		rd.forward(req, res);
-		System.out.println("1");
+		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+		rd.forward(request, response);
 		
 		
 	}
+
 }

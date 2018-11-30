@@ -9,14 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LogoutServlet extends HttpServlet{
+public class LogoutServlet extends HttpServlet {
+	
+	
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
-		HttpSession session = req.getSession();
+		HttpSession session = request.getSession();
 		session.removeAttribute("loggedInUser");
 		session.invalidate();
+		RequestDispatcher rd =request.getRequestDispatcher("login.jsp");
+		rd.forward(request, response);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
-		rd.forward(req, res);
 	}
+
 }

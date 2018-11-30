@@ -10,7 +10,7 @@ import com.fdmgroup.model.User;
 
 public class UserDao implements IUserDao{
 
-	private DbConnection connection;
+	private DbConnection connection = null;
 
 	public UserDao() {
 		super();

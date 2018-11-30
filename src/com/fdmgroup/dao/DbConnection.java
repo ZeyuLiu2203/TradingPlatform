@@ -6,23 +6,24 @@ import javax.persistence.Persistence;
 
 public class DbConnection {
 
-	private static final String JPA_UNIT_NAME = "AdvancedJPAExample";
+	private static final String PERSISTENCE_NAME = "JSPExample";
 	private static DbConnection connection = null;
-	private EntityManagerFactory emf;
+	private EntityManagerFactory emf = null;
 	
 	private DbConnection() {
 		init();
 	}
-	
-	private void init(){
-		if (emf == null || !emf.isOpen()){
-			emf = Persistence.createEntityManagerFactory(JPA_UNIT_NAME);
+
+	private void init() {
+		if (emf == null || !emf.isOpen()) {
+			emf = Persistence.createEntityManagerFactory(PERSISTENCE_NAME);
 		}
 	}
-	
-	public static DbConnection getInstance(){
-		if (connection == null)
+
+	public static DbConnection getInstance() {
+		if (connection == null) {
 			connection = new DbConnection();
+		}
 		
 		return connection;
 	}
@@ -32,7 +33,28 @@ public class DbConnection {
 		return emf.createEntityManager();
 	}
 	
-	public void close() {
-		emf.close();
+	public void closeEmf() {
+		if (emf != null && emf.isOpen()) {
+			emf.close();
+		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

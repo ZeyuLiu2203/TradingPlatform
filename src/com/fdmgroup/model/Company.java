@@ -43,17 +43,31 @@ public class Company {
 	@Column(name="exchangeId")
 	private int exchangeId;
 	
+	@Column(name="price")
+	private double price;
+	
+
+	public double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
 
 	public Company() {
 		super();
 	}
 	
 	
-	public Company( String name, String stockSymbol, int exchangeId) {
+	public Company( String name, String stockSymbol, int exchangeId, double price) {
 		super();
 		this.name = name;
 		this.stockSymbol = stockSymbol;
 		this.exchangeId = exchangeId;
+		this.price = price;
 	}
 
 

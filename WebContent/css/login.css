@@ -1,10 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<style type="text/css">
-    body {
+body {
     background-image: url("img/login/loginBackground.jpg");;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -93,27 +87,3 @@ form p > * {
 #login_control {
     padding: 0 28px;
 }
-    </style>
-
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to FDM</title>
-</head>
-<body>
-<div id="login_frame" background-image=url(https://placeimg.com/640/480/nature)>
- 
-    <p id="image_logo"><img src="img/login/welcome.png"></p>
- 
-    <form action="login" method="get">
-        <p><label class="label_input">UserID</label><input type="text" id="username" class="text_field" name="username" placeholder="Username"/></p>
-        <p><label class="label_input">Password</label><input type="password" id="password" class="text_field" placeholder="Password" name="password"/></p>
- 
-        <div id="login_control">
-            <input type="submit" id="btn_login" value="submit"/>
-            <a id="forget_pwd" href="register.html">register</a>
-            ${error}
-        </div>
-    </form>
-</div>
- 
-</body>
-</html>
