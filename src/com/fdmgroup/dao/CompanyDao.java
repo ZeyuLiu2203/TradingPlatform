@@ -1,6 +1,7 @@
 package com.fdmgroup.dao;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,6 +9,7 @@ import javax.persistence.TypedQuery;
 
 import com.fdmgroup.daoInterface.ICompanyDao;
 import com.fdmgroup.model.Company;
+import com.fdmgroup.model.User;
 
 public class CompanyDao implements ICompanyDao{
 
@@ -75,6 +77,15 @@ public class CompanyDao implements ICompanyDao{
 		em.close();
 		
 		return companies.get(0);
+	}
+
+	@Override
+	public ArrayList<Company> findAll() {
+		EntityManager em = connection.getEntityManager();
+		TypedQuery<Company> query = em.createNamedQuery("company.findAll", Company.class);
+		List<Company> companies = query.getResultList();
+		em.close();
+		return (ArrayList<Company>) companies;
 	}
 	
 	

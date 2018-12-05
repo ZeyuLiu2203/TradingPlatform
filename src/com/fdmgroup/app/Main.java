@@ -3,6 +3,7 @@ package com.fdmgroup.app;
 import com.fdmgroup.model.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.fdmgroup.dao.*;
 
@@ -12,26 +13,25 @@ public class Main {
 
 	public static void main(String[] args) {
 		UserDao userCollection= new UserDao();
-		//CompanyDao companydao = new CompanyDao();
-		User u1 = new User("www","123","jone","doe","eeee@qq.com");
-		//Company com=new Company("fdm","fdm",2,250.5);
-		userCollection.create(u1);
-		//userCollection.remove(u1);
-		//companydao.create(com);
+		CompanyDao companydao = new CompanyDao();
+		
+		TradeDao td = new TradeDao();
+		
+		List<Trade> trades = td.getTradeByUserid(1);
+		
 		//User ret = userCollection.findById(1);
 		//System.out.println(ret);
+		//System.out.println(trades.size());
 		
+		User u = userCollection.findById(1);
+		System.out.println(u);
+		u.setEmail("nmsl");
+		u.setUsername("????");
+		u.setFirstname("bin");
+		u.setLastname("sun");
+		userCollection.update(u);
 		
-		
-//		
-//		TradeDao tradeDao = new TradeDao();
-//		LocalDateTime localDateTime  = LocalDateTime.now();
-//		
-//		Trade t = new Trade(2,3,2.0,localDateTime);
-//		
-//		tradeDao.create(t);
-		
-		
+		System.out.println(userCollection.findById(1));
 	}
 
 }

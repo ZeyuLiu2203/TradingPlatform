@@ -47,6 +47,10 @@ public class UserDao implements IUserDao{
 			foundUser.setFirstname(user.getFirstname());
 		if (user.getLastname() != null && !user.getLastname().equals(""))
 			foundUser.setLastname(user.getLastname());
+		if (user.getEmail() != null && !user.getEmail().equals(""))
+			foundUser.setEmail(user.getEmail());
+		if (user.getUsername() != null && !user.getUsername().equals(""))
+			foundUser.setUsername(user.getUsername());
 
 		em.getTransaction().commit();
 		em.close();
@@ -56,7 +60,11 @@ public class UserDao implements IUserDao{
 		EntityManager em = connection.getEntityManager();
 		User user = em.find(User.class, id);
 		em.close();
+		if(user != null) {
+		
 		return user;
+		}
+		else { return null;}
 	}
 	
 	public List<User> findAll() {
@@ -77,8 +85,7 @@ public class UserDao implements IUserDao{
 		if (users != null && users.size() == 1){
 			return users.get(0);
 		}
-		
-		return null;
+		else {		return null;}
 	}
 	
 	@Override

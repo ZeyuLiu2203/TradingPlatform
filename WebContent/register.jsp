@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Register</title>  
+	
 <head>
 <style type="text/css">
     body {
@@ -95,25 +95,27 @@ form p > * {
 }
     </style>
 
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to FDM</title>
+
 </head>
-<body>
+<body>  
 <div id="login_frame" background-image=url(https://placeimg.com/640/480/nature)>
  
     <p id="image_logo"><img src="img/login/welcome.png"></p>
  
-    <form action="login" method="get">
-        <p><label class="label_input">UserID</label><input type="text" id="username" class="text_field" name="username" placeholder="Username"/></p>
+    <form action="register" method="get">
+        <p><label class="label_input">Username</label><input type="text" id="username" class="text_field" name="username" placeholder="Username"/></p>
         <p><label class="label_input">Password</label><input type="password" id="password" class="text_field" placeholder="Password" name="password"/></p>
+        <p><label class="label_input">email</label><input type="text" id="email" class="text_field" placeholder="email" name="email"/></p>
+        <p><label class="label_input">firstname</label><input type="text" id="firstname" class="text_field" placeholder="firstname" name="firstname"/></p>
+        <p><label class="label_input">lastname</label><input type="text" id="firstname" class="text_field" placeholder="lastname" name="lastname"/></p>
  
         <div id="login_control">
             <input type="submit" id="btn_login" value="submit"/>
-            <a id="forget_pwd" href="register.jsp">register</a>
+            <a id="z" href="login.jsp">Back to Login</a>
             ${error}
         </div>
     </form>
 </div>
- 
-</body>
-</html>
+</body>  
+</html>  
+

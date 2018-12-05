@@ -1,5 +1,7 @@
 package com.fdmgroup.daoInterface;
 
+import java.util.ArrayList;
+
 import com.fdmgroup.model.Company;
 
 public interface ICompanyDao {
@@ -10,5 +12,6 @@ public interface ICompanyDao {
 	 void remove(Company company);
 	 void update(Company company);
 	 Company findById(int id);
+	 ArrayList<Company> findAll();
 	
 }

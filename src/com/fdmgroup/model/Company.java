@@ -23,6 +23,7 @@ import javax.persistence.Table;
 @Table(name = "JPA_COMPANY")
 @NamedQueries({
 	@NamedQuery(name = "company.findByName", query = "SELECT c FROM Company c WHERE c.name LIKE :cn"),
+	@NamedQuery(name = "company.findAll", query = "SELECT u FROM Company u"),
 	@NamedQuery(name = "company.findByStockSymbol", query = "SELECT c FROM Company c WHERE c.stockSymbol = :cn"),
 })
 
