@@ -65,6 +65,44 @@
     <url-pattern>/updateProfile</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>DeleteUser</servlet-name>
+    <servlet-class>com.fdmgroup.servlet.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUser</servlet-name>
+    <url-pattern>/deleteUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.fdmgroup.servlet.AddUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/addUser</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>DeleteCompany</servlet-name>
+    <servlet-class>com.fdmgroup.servlet.DeleteCompanyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCompany</servlet-name>
+    <url-pattern>/deleteCompany</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>AddCompany</servlet-name>
+    <servlet-class>com.fdmgroup.servlet.AddCompanyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCompany</servlet-name>
+    <url-pattern>/addCompany</url-pattern>
+  </servlet-mapping>
+  
   
   
   <!-- <filter>

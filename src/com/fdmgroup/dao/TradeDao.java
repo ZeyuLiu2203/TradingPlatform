@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 import com.fdmgroup.daoInterface.ITradeDao;
 import com.fdmgroup.model.Company;
 import com.fdmgroup.model.Trade;
+import com.fdmgroup.model.User;
 
 public class TradeDao implements ITradeDao{
 	
@@ -38,6 +39,15 @@ public class TradeDao implements ITradeDao{
 		em.close();
 		
 		return t;
+	}
+	
+	@Override
+	public List<Trade> findAll() {
+		EntityManager em = connection.getEntityManager();
+		TypedQuery<Trade> query = em.createNamedQuery("Trade.findAll", Trade.class);
+		List<Trade> users = query.getResultList();
+		em.close();
+		return users;
 	}
 
 }

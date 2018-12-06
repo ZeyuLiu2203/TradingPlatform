@@ -30,8 +30,9 @@ public class Main {
 		u.setFirstname("bin");
 		u.setLastname("sun");
 		userCollection.update(u);
+		userCollection.findAll();
 		
-		System.out.println(userCollection.findById(1));
+		System.out.println(userCollection.findAll().size());
 	}
 
 }

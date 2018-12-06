@@ -289,7 +289,7 @@ $(window).on("load resize ", function() {
     <div id="bigger-frame">
       <div id="login_frame" background-image=url(https://placeimg.com/640/480/nature) >
  
-    <p id="image_logo"><img src="img/download (2).png"></p>
+    <p id="image_logo"><img src="img/Buy_Online-128.png"></p>
  
     <form action="buy" method="get">
         <p><label class="label_input">Stock id</label><input type="text" id="username" class="text_field" name="stockid" placeholder="stockid"/></p>
@@ -304,7 +304,7 @@ $(window).on("load resize ", function() {
         
    <div id="login_frame2" background-image=url(https://placeimg.com/640/480/nature)>
  
-    	<p id="image_logo"><img src="img/images (1).png"></p>
+    	<p id="image_logo"><img src="img/sell_button_shopping-512.png"></p>
  
 	    <form action="sell" method="get">
 	        <p><label class="label_input">Stock id</label><input type="text" id="username" class="text_field" name="stockid2" placeholder="stockid"/></p>

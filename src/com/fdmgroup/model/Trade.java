@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name="trade")
 @NamedQueries({
 	@NamedQuery(name = "trade.findByUserid", query = "SELECT t FROM Trade t where t.userid = :cn"),
-	
+	@NamedQuery(name = "Trade.findAll", query = "SELECT u FROM Trade u"),
 })
 public class Trade implements IStorable {
 	public Trade() {

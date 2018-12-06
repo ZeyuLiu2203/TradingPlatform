@@ -32,6 +32,19 @@ public class LoginServlet extends HttpServlet{
 				User tryAdmin = udao.findByUsername(username);
 				session.setAttribute("loggedInUser",tryAdmin);
 				RequestDispatcher rd = request.getRequestDispatcher("admin.jsp");
+				CompanyDao cdao = new CompanyDao();
+				List<Company> companies = cdao.findAll();
+				session.setAttribute("companies", companies);
+				
+				TradeDao tdao = new TradeDao();
+				List<Trade> trades = tdao.findAll();
+				session.setAttribute("tradeHistory",trades);
+				
+				List<User> users = udao.findAll();
+				session.setAttribute("allUsers",users);
+				
+				
+				
 				rd.forward(request, response);
 			}
 		

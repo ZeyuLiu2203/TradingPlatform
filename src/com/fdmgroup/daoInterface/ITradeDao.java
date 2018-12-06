@@ -11,4 +11,6 @@ public interface ITradeDao {
 	List<Trade> getTradeByUserid(int userid);
 	
 	Trade create(Trade t);
+
+	List<Trade> findAll();
 }
